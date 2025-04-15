@@ -9,7 +9,10 @@ import { removeUnverifiedAccounts } from "./automation/removeUnverifiedAccounts.
 
 export const app = express();
 config({ path: "./config.env" });
-
+const port = 4000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
